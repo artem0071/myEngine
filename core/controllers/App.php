@@ -11,10 +11,11 @@ class App
     public $Rout;
     public $User;
     
-    public function __construct($Rout,$User)
+    public function __construct($Rout)
     {
-        $this->Rout = $Rout;
-        $this->User = $User;
+
+        $this->Rout = new Router($Rout);
+        $this->User = new Users();
     }
 
     function render(){

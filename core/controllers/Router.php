@@ -6,7 +6,7 @@
  * Date: 20.11.16
  * Time: 14:32
  */
-class Router
+class Router extends App
 {
     public $URL;
     public $Lang = 'en';
@@ -15,7 +15,7 @@ class Router
     public $Args = array();
     public $mix;
 
-    public $langs = array('en', 'ru'); // доступные языки, первый по умолчанию
+    protected $langs = array('en', 'ru'); // доступные языки, первый по умолчанию
     
     
     function __construct($URL)
@@ -45,7 +45,7 @@ class Router
         if(file_exists($PagePath) == true){ // если файл существует, то добавить, иначе 404
 
             $this->Page = $Page;
-            
+
         } else header('Location: ../'.$this->Lang.'/404');
 
 
